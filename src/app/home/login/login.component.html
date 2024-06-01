@@ -1,0 +1,51 @@
+<div class="w-2/5 pl-10 pb-10 pr-10 pt-4 rounded-xl bg-slate-300 absolute right-2/4 left-2/4" style="transform: translate(-50%, 0%); backdrop-filter: blur(5px);">
+    <div class="w-full flex flex-row-reverse mb-3">
+        <div style="width: 8%;" >
+            <button class="w-full " (click)="closeLoginForm()"><img class="w-full right-0 bg-black" style="border-radius: 50%;" src="assets/icons/login/close-icon.png" alt=""></button>
+        </div>
+    </div>
+    <div class="w-full">
+        <h1 class="font-medium text-xl">Get Started Now</h1>
+        <p class="text-xs pb-4">Enter Your Credintials to access your account</p>
+
+        <div class="pb-5 flex px-2">
+            <a href="" class="text-xs flex items-center justify-center px-2 py-1 border-zinc-500 border rounded-xl m-auto">
+                <img style="width: 12%;" src="assets/icons/login/icons8-google-48.png" alt=""><span style="width: 88%;" class="pl-2">Log In With Google</span>
+            </a>
+            <a href="" class="text-xs flex items-center justify-center px-2 py-1 border-zinc-500 border rounded-xl m-auto">
+                <img style="width: 12%;" src="assets/icons/login/icons8-apple-50.png" alt=""><span style="width: 88%;" class="pl-2">Log In With Apple</span>
+            </a>
+        </div>
+
+        <p class="border-t border-zinc-400 relative pb-6 text-center ">
+            <span style="border-radius: 50%; top: -18px; padding: 3px 6px; text-align: center; transform: translate(-44%, 7%);" class="absolute bg-white">or</span>
+        </p>
+    </div>
+
+
+
+    <form #userForm="ngForm" (ngSubmit)="submitLoginForm(userForm)">
+        <div class="form-group" style="height: 15vh;">
+            <label for="name" class="text-sm w-full">Username</label>
+            <input type="text" class="form-control block w-full rounded-md border-0 py-1.5 pl-7 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-400 sm:text-sm sm:leading-6" name="email" id="email" [(ngModel)]="userDetails.email"required>
+            <div *ngIf="userForm.controls['email']?.touched && userForm.controls['email']?.invalid" class="text-xs text-red-600">
+                *enter correct username
+            </div>
+        </div>
+
+        <div class="form-group" style="height: 15vh;">
+            <label for="password">Password</label>
+            <input type="text" class="form-control block w-full rounded-md border-0 py-1.5 pl-7 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-400 sm:text-sm sm:leading-6" name="password" id="password" [(ngModel)]="userDetails.password" required>
+            <div *ngIf="userForm.controls['password']?.touched && userForm.controls['password']?.invalid" class="text-xs text-red-600">
+                *enter password
+            </div>
+        </div>
+        <div class="form-group">
+            <input type="checkbox" class="form-control pt-1" name="rememberMe" id="rememberMe" [(ngModel)]="userDetails.rememberMe">
+            <label for="rememberMe" class="pl-4 text-sm cursor-pointer">remember me </label>
+        </div>
+        <button type="submit" class="mt-4 w-full text-center bg-blue-700 py-1 text-white rounded-lg">
+            Submit
+        </button>
+    </form>
+</div>

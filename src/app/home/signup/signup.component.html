@@ -1,0 +1,85 @@
+<div class="w-2/4 pl-10 pb-10 pr-10 pt-4 rounded-xl bg-slate-300 absolute right-2/4 left-2/4" style="transform: translate(-50%, 0%); backdrop-filter: blur(5px);">
+    <div class="w-full flex flex-row-reverse mb-3">
+        <div style="width: 6%;" >
+            <button class="w-full " (click)="closeSignupForm()"><img class="w-full right-0 bg-black" style="border-radius: 50%;" src="assets/icons/login/close-icon.png" alt=""></button>
+        </div>
+    </div>
+    <h1 class="w-full text-center pb-4 text-xl">Registration</h1>
+    <form [formGroup] = "userForm" (ngSubmit)="submitForm()">
+        <div class="flex" style="height: 10vh;">
+            <div class="form-group w-2/4 px-2">
+                <label for="name" class="text-xs w-full">First Name</label>
+                <input type="text"
+                        formControlName="firstName" 
+                        id="firstName" 
+                        (focus)="onFocus()"
+                        class="form-control block w-full rounded-md border-0 py-1 pl-7 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-400 sm:text-sm sm:leading-6" >
+            </div>
+    
+            <div class="form-group w-2/4 px-2" style="height: 15vh;">
+                <label for="password" class="text-xs">Last Name</label>
+                <input type="text" 
+                        formControlName="lastName"
+                        id="lastName"
+                        (focus)="onFocus()" 
+                        class="form-control block w-full rounded-md border-0 py-1 pl-7 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-400 sm:text-sm sm:leading-6" >
+            </div>
+        </div>
+        <div class="flex" style="height: 10vh;">
+            <div class="form-group w-2/4 px-2">
+                <label for="name" class="text-xs w-full ">Email</label>
+                <input type="text" 
+                        formControlName="email" 
+                        id="email"
+                        (focus)="onFocus()" 
+                        class="form-control block w-full rounded-md border-0 py-1 pl-7 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-400 sm:text-sm sm:leading-6" >
+            </div>
+    
+            <div class="form-group w-2/4 px-2" style="height: 15vh;">
+                <label for="password" class="text-xs">Contact Number</label>
+                <input type="text" 
+                        formControlName="mobile" 
+                        id="mobile"
+                        (focus)="onFocus()" 
+                        class="form-control block w-full rounded-md border-0 py-1 pl-7 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-400 sm:text-sm sm:leading-6" >
+            </div>
+        </div>
+        <div class="flex" style="height: 10vh;">
+            <div class="form-group w-1/4 px-2">
+                <label for="name" class="text-xs w-full">Gender</label>
+                <select formControlName="gender" 
+                        id="gender"
+                        (focus)="onFocus()" 
+                        class=" form-control block w-full rounded-md border-0 py-1 pl-2 pr-8 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-400 sm:text-sm sm:leading-6">
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+    
+            <div class="form-group w-1/4 px-2">
+                <label for="password" class="text-xs">Age</label>
+                <div class="flex w-full" >
+                    <input type="text" 
+                            formControlName="age" 
+                            id="age"
+                            (focus)="onFocus()" 
+                            class="form-control block w-full rounded-md border-0 py-1 pl-4 pr-15 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-400 sm:text-sm sm:leading-6" >
+                    <p class="text-md text-neutral-400 pt-1" style="margin-left: -55px;">years</p>
+                </div>
+            </div>
+            <div class="form-group w-2/4 px-2" >
+                <label for="password" class="text-xs">Company Name</label>
+                <input type="text" 
+                        formControlName="companyName" 
+                        id="companyName"
+                        (focus)="onFocus()" 
+                        class="form-control block w-full rounded-md border-0 py-1 pl-7 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-400 sm:text-sm sm:leading-6" >
+            </div>
+        </div>
+        <div class="text-sm text-red-800 pt-1 pl-1" style="height: 1em;" >
+            {{formWarning}}
+        </div>
+        <button type="submit" class="mt-4 w-full text-center bg-blue-700 py-1 text-white rounded-lg bg-black">Register</button>
+    </form> 
+</div>

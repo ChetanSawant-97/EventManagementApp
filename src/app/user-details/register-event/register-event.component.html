@@ -2,76 +2,78 @@
 
 <div class="bg-white p-8 flex flex-col w-2/4 m-auto rounded-xl">
     <h1 class="montserrat-600 w-full text-center pb-6 text-xl">Schedule Event !</h1>
-    <div class="flex w-full">
-        <div class="w-2/4">
-            <label for="" class="w-full">Full Name</label>
-            <div class="input-div">
-                <input type="text" class="form-control block w-full rounded-md border-0 py-1 pl-2 pr-10 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-400 sm:text-sm sm:leading-6" name="email" id="email" >
+    <form [formGroup]="scheduleEvent" (ngSubmit)="onScheduleSubmit()">
+        <div class="flex w-full">
+            <div class="w-2/4">
+                <label for="" class="w-full">Full Name</label>
+                <div class="input-div">
+                    <input type="text" name="fullName" id="fullName" formControlName="fullName" class="form-control block w-full rounded-md border-0 py-1 pl-2 pr-10 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-400 sm:text-sm sm:leading-6" >
+                </div>
+            </div>
+            <div class="w-2/4">
+                <label for="">Email</label>
+                <div class="input-div">
+                    <input type="text" name="email" id="email" formControlName="email" class="form-control block w-full rounded-md border-0 py-1 pl-2 pr-10 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-400 sm:text-sm sm:leading-6"  >
+                </div>
             </div>
         </div>
-        <div class="w-2/4">
-            <label for="">Email</label>
-            <div class="input-div">
-                <input type="text" class="form-control block w-full rounded-md border-0 py-1 pl-2 pr-10 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-400 sm:text-sm sm:leading-6" name="email" id="email" >
+        <div class="flex w-full">
+            <div class="w-2/4">
+                <label for="">Session Title</label>
+                <div class="input-div">
+                    <input type="text" name="sessionTitle" id="sessionTitle" formControlName="sessionTitle" class="form-control block w-full rounded-md border-0 py-1 pl-2 pr-10 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-400 sm:text-sm sm:leading-6" >
+                </div>
+            </div>
+            <div class="w-2/4">
+                <label for="">Description</label>
+                <div class="input-div">
+                    <input type="text" name="description" id="description" formControlName="description" class="form-control block w-full rounded-md border-0 py-1 pl-2 pr-10 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-400 sm:text-sm sm:leading-6"  >
+                </div>
             </div>
         </div>
-    </div>
-    <div class="flex w-full">
-        <div class="w-2/4">
-            <label for="">Session Title</label>
-            <div class="input-div">
-                <input type="text" class="form-control block w-full rounded-md border-0 py-1 pl-2 pr-10 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-400 sm:text-sm sm:leading-6" name="email" id="email" >
+        <div class="flex w-full">
+            <div class="w-2/4">
+                <label for="">Speaker Name</label>
+                <div class="input-div">
+                    <input type="text" name="speakerName" id="speakerName" formControlName="speakerName" class="form-control block w-full rounded-md border-0 py-1 pl-2 pr-10 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-400 sm:text-sm sm:leading-6"  >
+                </div>
+            </div>
+            <div class="w-2/4">
+                <label for="">Speaker Bio</label>
+                <div class="input-div">
+                    <input type="text" name="speakerBio" id="speakerBio" formControlName="speakerBio" class="form-control block w-full rounded-md border-0 py-1 pl-2 pr-10 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-400 sm:text-sm sm:leading-6"  >
+                </div>
             </div>
         </div>
-        <div class="w-2/4">
-            <label for="">Description</label>
-            <div class="input-div">
-                <input type="text" class="form-control block w-full rounded-md border-0 py-1 pl-2 pr-10 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-400 sm:text-sm sm:leading-6" name="email" id="email" >
+        <div class="flex w-full">
+            <div class="w-1/4">
+                <label for="">Session Date</label>
+                <div class="input-div">
+                    <input type="text"  name="sessionDate" id="sessionDate" formControlName="sessionDate" class="form-control block w-full rounded-md border-0 py-1 pl-2 pr-10 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-400 sm:text-sm sm:leading-6"  >
+                </div>
+            </div>
+            <div class="w-1/4">
+                <label for="">Start Time</label>
+                <div class="input-div">
+                    <input type="text"  name="startTime" id="startTime" formControlName="startTime" class="form-control block w-full rounded-md border-0 py-1 pl-2 pr-10 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-400 sm:text-sm sm:leading-6"  >
+                </div>
+            </div>
+            <div class="w-1/4">
+                <label for="">End Time</label>
+                <div class="input-div">
+                    <input type="text" name="endTime" id="endTime" formControlName="endTime" class="form-control block w-full rounded-md border-0 py-1 pl-2 pr-10 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-400 sm:text-sm sm:leading-6"  >
+                </div>
+            </div>
+            <div class="w-1/4">
+                <label for="">Room Location</label>
+                <div class="input-div">
+                    <input type="text"  name="roomLocation" id="roomLocation" formControlName="roomLocation" class="form-control block w-full rounded-md border-0 py-1 pl-2 pr-10 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-400 sm:text-sm sm:leading-6"  >
+                </div>
             </div>
         </div>
-    </div>
-    <div class="flex w-full">
-        <div class="w-2/4">
-            <label for="">Speaker Name</label>
-            <div class="input-div">
-                <input type="text" class="form-control block w-full rounded-md border-0 py-1 pl-2 pr-10 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-400 sm:text-sm sm:leading-6" name="email" id="email" >
-            </div>
-        </div>
-        <div class="w-2/4">
-            <label for="">Speaker Bio</label>
-            <div class="input-div">
-                <input type="text" class="form-control block w-full rounded-md border-0 py-1 pl-2 pr-10 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-400 sm:text-sm sm:leading-6" name="email" id="email" >
-            </div>
-        </div>
-    </div>
-    <div class="flex w-full">
-        <div class="w-1/4">
-            <label for="">Session Date</label>
-            <div class="input-div">
-                <input type="text" class="form-control block w-full rounded-md border-0 py-1 pl-2 pr-10 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-400 sm:text-sm sm:leading-6" name="email" id="email" >
-            </div>
-        </div>
-        <div class="w-1/4">
-            <label for="">Start Time</label>
-            <div class="input-div">
-                <input type="text" class="form-control block w-full rounded-md border-0 py-1 pl-2 pr-10 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-400 sm:text-sm sm:leading-6" name="email" id="email" >
-            </div>
-        </div>
-        <div class="w-1/4">
-            <label for="">End Time</label>
-            <div class="input-div">
-                <input type="text" class="form-control block w-full rounded-md border-0 py-1 pl-2 pr-10 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-400 sm:text-sm sm:leading-6" name="email" id="email" >
-            </div>
-        </div>
-        <div class="w-1/4">
-            <label for="">Room Location</label>
-            <div class="input-div">
-                <input type="text" class="form-control block w-full rounded-md border-0 py-1 pl-2 pr-10 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-400 sm:text-sm sm:leading-6" name="email" id="email" >
-            </div>
-        </div>
-    </div>
 
-    <button type="submit" class="mt-4 w-full text-center bg-blue-700 py-1 text-white rounded-lg">
-        Submit
-    </button>
+        <button type="submit" class="mt-4 w-full text-center bg-blue-700 py-1 text-white rounded-lg">
+            Submit
+        </button>
+    </form>
 </div>

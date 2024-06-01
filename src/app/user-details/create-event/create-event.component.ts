@@ -30,11 +30,11 @@ export class CreateEventComponent {
 
   onSubmitEvent(){
       if(this.createEventForm.valid){
-        alert(this.createEventForm.value);
+        alert(JSON.stringify(this.createEventForm.value));
       }else{
         console.log("Something Went Wrong");
       }
-      console.log(this.createEventForm);
+      console.log();
   }
 
 }

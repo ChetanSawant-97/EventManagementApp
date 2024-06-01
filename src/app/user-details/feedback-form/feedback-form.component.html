@@ -3,30 +3,32 @@
 
 <div class="bg-white p-8 flex flex-col w-2/4 m-auto rounded-xl">
     <h1 class="montserrat-600 w-full text-center pb-6 text-xl">Give Us Your Feedback !</h1>
-    <div class="flex w-full">
-        <div class="w-2/4">
-            <label for="" class="w-full">User Name</label>
-            <div class="input-div">
-                <input type="text" class="form-control block w-full rounded-md border-0 py-1 pl-7 pr-10 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-400 sm:text-sm sm:leading-6" name="email" id="email" >
+    <form [formGroup]="submitFeedback" (ngSubmit)="onSubmitFeedback()">
+        <div class="flex w-full">
+            <div class="w-2/4">
+                <label for="" class="w-full">User Name</label>
+                <div class="input-div">
+                    <input type="text" name="userName" id="userName" formControlName="userName"  class="form-control block w-full rounded-md border-0 py-1 pl-7 pr-10 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-400 sm:text-sm sm:leading-6" >
+                </div>
+            </div>
+            <div class="w-2/4">
+                <label for="">Session Attended</label>
+                <div class="input-div">
+                    <input type="text" name="sessionAttended" id="sessionAttended" formControlName="sessionAttended"  class="form-control block w-full rounded-md border-0 py-1 pl-7 pr-10 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-400 sm:text-sm sm:leading-6" >
+                </div>
             </div>
         </div>
-        <div class="w-2/4">
-            <label for="">Session Attended</label>
-            <div class="input-div">
-                <input type="text" class="form-control block w-full rounded-md border-0 py-1 pl-7 pr-10 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-400 sm:text-sm sm:leading-6" name="email" id="email" >
+        <div class="flex w-full">
+            <div class="w-full">
+                <label for="">Description</label>
+                <div class="input-div">
+                    <textarea name="description" id="description" formControlName="description" rows="4" class="form-control block w-full rounded-md border-0 py-1 pl-7 pr-10 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-400 sm:text-sm sm:leading-6"></textarea>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="flex w-full">
-        <div class="w-full">
-            <label for="">Location</label>
-            <div class="input-div">
-                <textarea name="" id="" rows="4" class="form-control block w-full rounded-md border-0 py-1 pl-7 pr-10 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-400 sm:text-sm sm:leading-6"></textarea>
-            </div>
-        </div>
-    </div>
-
-    <button type="submit" class="mt-4 w-full text-center bg-blue-700 py-1 text-white rounded-lg">
-        Submit
-    </button>
+        <button type="submit" class="mt-4 w-full text-center bg-blue-700 py-1 text-white rounded-lg">
+            Submit
+        </button>
+    </form>
+    
 </div>

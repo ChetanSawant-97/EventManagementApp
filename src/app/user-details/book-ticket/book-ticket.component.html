@@ -1,1 +1,17 @@
 <h1 class="p-5 montserrat-600 text-white" style="font-size: 2em;">Book Your Ticket</h1>
+
+<label for=""></label>
+<input type="text" name="firstName" [(ngModel)]="firstName">
+
+
+<div class="flex w-full flex-col">
+    <div class="flex w-full flex-row">
+        <a routerLink="movieTicket" (click)="changeTab('movieScreen')" id="movieScreenTab" [ngClass] ="['w-1/3','text-xl','montserrat-500', 'text-center','py-4','font-semibold','text-white',activeTab=='movieScreen'?'bg-blue-800':'bg-black']">Movie Tickets</a>
+        <a routerLink="concerts" (click)="changeTab('concertScreen')" id="concertScreenTab" [ngClass] ="['w-1/3','text-xl','montserrat-500', 'text-center','py-4','font-semibold','text-white',activeTab=='concertScreen'?'bg-blue-800':'bg-black']">Concert Tickets</a>
+        <a routerLink="busTicket" (click)="changeTab('busScreen')" id="busScreenTab" [ngClass] ="['w-1/3','text-xl','montserrat-500', 'text-center','py-4','font-semibold','text-white',activeTab=='busScreen'?'bg-blue-800':'bg-black']">Bus Tickets</a>
+    </div>
+    <div>
+        <router-outlet></router-outlet>
+    </div>
+</div>
+

@@ -2,6 +2,9 @@ import { Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { UserDetailsComponent } from './user-details/user-details.component';
 import { DashboardComponent } from './user-details/dashboard/dashboard.component';
+import { BookTicketRoutingModule } from './user-details/book-ticket/book-ticket/book-ticket-routing.module';
+import { BookTicketComponent } from './user-details/book-ticket/book-ticket.component';
+
 
 export const routes: Routes = [
     {path:"",component:HomeComponent,
@@ -28,7 +31,8 @@ export const routes: Routes = [
                 loadComponent:()=>import('./user-details/feedback-form/feedback-form.component').then(m=>m.FeedbackFormComponent)
             },
             {path:"bookTicket", 
-                loadComponent:()=>import('./user-details/book-ticket/book-ticket.component').then(m=>m.BookTicketComponent)
+                loadComponent:()=>import('./user-details/book-ticket/book-ticket.component').then(m=>m.BookTicketComponent),
+                loadChildren:()=> import('./user-details/book-ticket/book-ticket/book-ticket.module').then(m=>m.BookTicketModule)
             },
             {path:"history", 
                 loadComponent:()=>import('./user-details/history/history.component').then(m=>m.HistoryComponent)
